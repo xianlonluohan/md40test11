@@ -38,12 +38,12 @@ void setup() {
 
   g_md40.Init();
 
-  Serial.print(F("Motor "));
-  Serial.print(i);
-  Serial.print(F(" state:"));
-  Serial.print(static_cast<uint8_t>(g_md40[i].state()));
-  Serial.print(F(", speed pid p:"));
-  Serial.print(g_md40[i].speed_pid_p());
+  Serial.print(F("Device ID: 0x"));
+  Serial.println(g_md40.device_id(), HEX);
+  Serial.print(F("Name: "));
+  Serial.println(g_md40.name());
+  Serial.print(F("Firmware Version: "));
+  Serial.println(g_md40.firmware_version());
 
   for (uint8_t i = 0; i < em::Md40::kMotorNum; i++) {
     g_md40[i].SetEncoderMode(kEncoderPpr, kReductionRatio, em::Md40::Motor::PhaseRelation::kAPhaseLeads);
