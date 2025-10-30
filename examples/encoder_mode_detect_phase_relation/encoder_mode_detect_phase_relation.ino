@@ -75,7 +75,7 @@ void setup() {
   for (uint8_t i = 0; i < em::Md40::kMotorNum; i++) {
     Serial.print("Motor ");
     Serial.print(i);
-    Serial.print(" run speed: ");
+    Serial.print(" run pwm duty: ");
     Serial.println(kMotorPwmDuty);
     g_md40[i].RunPwmDuty(kMotorPwmDuty);
   }

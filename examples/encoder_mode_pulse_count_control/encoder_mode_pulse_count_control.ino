@@ -103,7 +103,7 @@ void loop() {
       Serial.print(i);
       Serial.print(" from position ");
       Serial.print(g_md40[i].position());
-      Serial.println(" move +100 degrees");
+      Serial.println(" move 100 degrees");
 
       g_md40[i].Move(kMotorMoveOffset, kMotorSpeed);
     }

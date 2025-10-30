@@ -72,7 +72,7 @@ void setup() {
 
 void loop() {
   if (g_trigger_time == 0 || millis() - g_trigger_time > 2000) {
-    Serial.println("Initial state - All motor positions:");
+    Serial.println("Initial state:");
     for (uint8_t i = 0; i < em::Md40::kMotorNum; i++) {
       Serial.print("Motor ");
       Serial.print(i);
@@ -100,14 +100,14 @@ void loop() {
       Serial.print(i);
       Serial.print(" from ");
       Serial.print(g_md40[i].position());
-      Serial.println(" move +100 degrees");
+      Serial.println(" move 100 degrees");
 
       g_md40[i].Move(kMotorMoveOffset, kMotorSpeed);
     }
 
     delay(1000);
 
-    Serial.println("Positions after movement:");
+    Serial.println("After movement:");
     for (uint8_t i = 0; i < em::Md40::kMotorNum; i++) {
       Serial.print("Motor ");
       Serial.print(i);
